@@ -1,0 +1,689 @@
+---
+title: "Gov 52 Replication Project"
+author: "Daiana Lilo"
+date: "5/07/2021"
+output: pdf_document
+---
+
+```{r setup, include = FALSE}
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(tidyverse) 
+library(ggplot2)
+library(arm)
+library(stringr)
+library(foreign)
+library(Synth)
+library(doBy)
+library(rbounds)
+library(rgenoud)
+library(stargazer)
+library(AER)
+library(arm)
+library(nnet)
+library(reshape2)
+```
+
+## Introduction:
+
+In the course Gov 52, students have become more exposed and familiarized with
+statistical modeling, regression analysis, and data collection. In order to 
+further extend my understanding of this material, I have decided to replicate
+the work done in Jeffrey Harden's and Justin Kirkland's piece "Do Campaign
+Donors Influence Polarization? Evidence from Public Financing in the American
+States." On a base level, the piece attempts to answer the age-old question of
+how money affects US politics and whether or not it is too influential.
+Specifically, Harden and Kirkland (2016) looks at if the source of campaign 
+funds, that is whether a campaign is funded privately or publicly, influences
+legislative polarization. They consider the claim that private donors facilitate 
+legislative polarization more than large-scale public donors. This is based on the 
+assumption that individual and privatized donors are more ideologically extreme 
+than the public as a whole. In order to study this, Harden and Kirkland use 
+linear regressions and synthetic case studies to study the natural experiment in 
+the New Jersey Assembly.
+
+The replication code and appendix of this paper can be found at the following
+link: *https://doi.org/10.7910/DVN/28868*
+
+
+
+## Literature Review:
+
+The topic of campaign finance and control has been one heavily discussed by both
+the general public and political figures. The Supreme Court has heavily weighted in on 
+the topic, first with the landmark case *Buckley v. Valeo*, where it was ruled
+that limitations on certain types of election spending is unconstitutional and
+money itself constitutes as protected speech under the First Amendment. More
+recently in the 2010 case of *Citizens United v. Federal Election Commission*, 
+the Court decided that the free speech clause in the First Amendment prohibits 
+the United States government from restricting independent expenditures by
+corporations. By making donations a form of legitimate political participation,
+the Supreme Court furthered people's concerns about money in politics. Many 
+studies have been conducted on this relationship between money and politics.
+Gilens (2012) discusses the idea of democracy, and how such a system can be
+achieved if a nation gives most political advantage to the richest members.
+Meanwhile, Scholzman, Verba, and Brady (2012) looked at representation within
+political participation, suggesting that the affluent and educated play the 
+biggest role, potentially leading to political inequality. Furthermore, Hamm
+and Hogan (2008) look at financing politics through a different lens, finding
+that low contributions to a legislative campaign pave the way for a challenger
+to face the incumbent. Finally, Stratmann and Aparicio-Castillo (2006) suggest
+that restrictions on campaign financing can lead to closer margins of victory
+in state legislative elections. We see with all these studies that the stakes
+in studying finance in politics as a form of political action and participation
+are extremely high, as landmark cases have been decided on this topic, and 
+scholars continuously debate the influence of the action heavily.
+
+
+
+## New Jersey Assembly Natural Experiment:
+
+As aforementioned, Harden and Kirkland (2016) use a natural experiment found 
+within the New Jersey Assembly to conduct their study. Specifically, the study
+looks at the *New Jersey Fair and Clean Elections Pilot Project*, as the program
+set forth public financing in the years 2005 and 2007 for some legislative 
+Assembly members. The short experiment, which was not again renewed in 2009, 
+allowed the authors to compare the voting behaviors of the New Jersey legislators
+that were publicly funded and those who were not. Similar comparisons were done
+with legislators in the states of Arizona and Maine, before and after the
+implementation of public financing. While New Jersey implemented a pilot program
+which introduced public financing, Arizona's and Maine's were on a state-wide 
+scale. The laws were passed in 1998 and 1996 respectively in order to curb 
+corruption. 
+
+
+
+## Hypotheses: 
+
+The study sets forth many theoretical expectations and hypotheses regarding
+the question of campaign financing and legislative polarization. I will list a 
+the hypotheses made in this study:
+
+- Moderating Hypothesis: "(a) Committee Voting: Public financing of legislative elections reduces the 
+ideological extremity of individual legislators’ voting behavior in committees."
+"(b) Floor Voting: Public financing of legislative elections reduces the ideological 
+extremity of individual legislators’ roll-call behavior on the floor of the chamber."
+
+
+- The Flanking Hypothesis: "(a) Committee Voting: Public financing of legislative 
+elections increases the ideological extremity of individual legislators’ voting 
+behavior in committees."
+"(b) Floor Voting: Public financing of legislative elections increases the 
+ideological extremity of individual legislators’ roll-call behavior on the floor 
+of the chamber."
+
+
+- The Strategic Donor Hypothesis: "(a) Committee Voting: Public financing of 
+legislative elections reduces the ideological extremity of individual legislators’ 
+voting behavior in committees."
+"(b) Floor Voting: Public financing of legislative elections exerts no effect on 
+the ideological extremity of individual legislators’ roll-call behavior on the 
+floor of the chamber."
+
+
+- No-Strings-Attached Hypothesis: "(a) Committee Voting: Public financing of 
+legislative elections exerts no effect on the ideological extremity of individual 
+legislators’ voting behavior in committees."
+"(b) Floor Voting: Public financing of legislative elections exerts no effect on 
+the ideological extremity of individual legislators’ roll-call behavior on the 
+floor of the chamber."
+
+
+
+# Methodology:
+
+As previously mentioned, the study primarily focuses on synthetic case studies 
+to create counterfactuals in order to depict what happened in the states of 
+New Jersey, Arizona, and Maine during events of both public and private financing. 
+Limitations to this data exist, particularly the New Jersey curated information, 
+as the data set is small. The objective of the study is to test the theories
+mentioned above to estimate the causal effect of public financing on the 
+legislative voting and polarization. Synthetic case control helps accomplish 
+this, as it creates a mock "second version" of the event we are studying but
+using controlled cases and variables only. This method of modeling is also
+ideal for smaller data sample sets, such as the New Jersey example provides.
+
+In order to create the models, roll-call data was utilized from the New Jersey
+Legislative Assembly. Polarization, the variable of interest, is measured by
+applying Martin Quinn Scores to the legislative votes. Below, we can see how 
+synthetic case structures were developed and graphed (the names correspond to
+specific assemblymen):
+
+Please Note! The solid lines in the graphs present the extremity of each 
+legislators ideal points and the dashed lines present synthetic case predictions 
+before and after taking public financing.
+
+Assembly Member 1
+```{r}
+# Loading Data One
+
+assemb.comm <- read.dta("assemb-comm.dta")
+assemb.comm$female <- ifelse(assemb.comm$Gender == "F", 1, 0)
+assemb.comm$gop <- ifelse(assemb.comm$Party == "R", 1, 0)
+treated <- c(71, 72, 82, 92, 141)
+controls <- unique(assemb.comm$idnum[assemb.comm$PublicFinance == 0])
+controls <- controls[-which(controls %in% treated)]
+predictors <- c("variance", "Leader", "MoneyRaised", "Seniority", "Vote", "Race", "female", "gop", "Pres_DemShare_2000")
+
+# Synthetic Case Control One
+
+lrg.dp <- dataprep(assemb.comm, 
+  predictors = predictors,
+  predictors.op = "mean",
+  time.predictors.prior = 1:3,
+  dependent = "extremity",
+  unit.variable = "idnum",
+  unit.names.variable = "Name",
+  time.variable = "timenum",
+  treatment.identifier = 71,
+  controls.identifier = controls,  
+  time.optimize.ssr = 1:3,
+  time.plot = 1:5)
+
+# Generate synthetic 
+lrg.synth <- synth(lrg.dp, method = "BFGS")
+lrg.diag <- synth.tab(dataprep.res = lrg.dp, synth.res = lrg.synth)
+
+lrg.pred <- lrg.dp$Y0plot %*% lrg.synth$solution.w 
+
+
+par(mar = c(5, 5, .5, .5))
+plot(1:5, lrg.dp$Y1plot, type = "n", ylim = c(0, 4.5), lwd = 2, xlab = "", ylab = "", axes = FALSE)
+box(); grid()
+abline(v = 4, lwd = 1)
+lines(1:5, lrg.dp$Y1plot, lwd = 2)
+lines(1:5, lrg.pred, lwd = 2, lty = 2)
+axis(1, at = 1:5, labels = seq(2002, 2010, 2), cex.axis = 1.25)
+axis(2, at = seq(0, 4.5, .5), cex.axis = 1.25, las = 2)
+title(xlab = "Year", cex.lab = 1.5, line = 3)
+title(ylab = "Extremity in Committee Vote Ideal Points", cex.lab = 1., line = 3)
+legend("topleft", inset = .025, bty = "n", c("Linda R. Greenstein", "Synthetic Linda R. Greenstein"), lwd = 2, col = "black", lty = c(1, 2, -1), cex = 1.25)
+text(2.25, .1, "First year after public financing", cex = 1.25)
+arrows(3.3, .1, 3.95, .1, length = .1)
+rug(assemb.comm$extremity, side = 2, ticksize = .025)
+text(1.75, 1.4, bquote(paste("MSPE" == .(round(lrg.synth$loss.v, 5)))), cex = 1.25)
+
+dev.off()
+```
+
+Assembly Member 2
+```{r}
+
+# Loading Data Two 
+
+ldg.dp <- dataprep(assemb.comm, 
+  predictors = predictors,
+  predictors.op = "mean",
+  time.predictors.prior = 1:2,
+  dependent = "extremity",
+  unit.variable = "idnum",
+  unit.names.variable = "Name",
+  time.variable = "timenum",
+  treatment.identifier = 72,
+  controls.identifier = controls,  
+  time.optimize.ssr = 1:2,
+  time.plot = 1:5)
+
+# Generate synthetic Louis D. Greenwald 
+ldg.synth <- synth(ldg.dp, method = "BFGS")
+ldg.diag <- synth.tab(dataprep.res = ldg.dp, synth.res = ldg.synth)
+
+# Plot LDG and S-LDG #
+ldg.pred <- ldg.dp$Y0plot %*% ldg.synth$solution.w 
+
+par(mar = c(5, 5, .5, .5))
+plot(1:5, ldg.dp$Y1plot, type = "n", ylim = c(0, 4.5), lwd = 2, xlab = "", ylab = "", axes = FALSE)
+box(); grid()
+abline(v = 3, lwd = 1)
+lines(1:5, ldg.dp$Y1plot, lwd = 2)
+lines(1:5, ldg.pred, lwd = 2, lty = 2)
+axis(1, at = 1:5, labels = seq(2002, 2010, 2), cex.axis = 1.25)
+axis(2, at = seq(0, 4.5, .5), cex.axis = 1.25, las = 2)
+title(xlab = "Year", cex.lab = 1.5, line = 3)
+title(ylab = "Extremity in Committee Vote Ideal Points", cex.lab = 1, line = 3)
+legend("topleft", inset = .025, bty = "n", c("Louis D. Greenwald", "Synthetic Louis D.", "Greenwald"), lwd = 2, col = "black", lty = c(1, 2, -1), cex = 1.25)
+text(1.75, .25, "First year after", cex = 1.25)
+text(1.75, .1, "public financing", cex = 1.25)
+arrows(2.3, .25, 2.95, .25, length = .1)
+rug(assemb.comm$extremity, side = 2, ticksize = .025)
+text(1.75, 1.55, bquote(paste("MSPE" == .(round(ldg.synth$loss.v, 5)))), cex = 1.25)
+
+dev.off()
+
+```
+
+Assembly Member 3
+```{r}
+
+# Loading Data Three
+
+gmj.dp <- dataprep(assemb.comm, 
+  predictors = predictors,
+  predictors.op = "mean",
+  time.predictors.prior = 1:3,
+  dependent = "extremity",
+  unit.variable = "idnum",
+  unit.names.variable = "Name",
+  time.variable = "timenum",
+  treatment.identifier = 82,
+  controls.identifier = controls,  
+  time.optimize.ssr = 1:3,
+  time.plot = 1:5)
+
+# Generate synthetic Gordon M. Johnson #
+gmj.synth <- synth(gmj.dp, method = "BFGS")
+gmj.diag <- synth.tab(dataprep.res = gmj.dp, synth.res = gmj.synth)
+
+# Plot GMJ and S-GMJ #
+gmj.pred <- gmj.dp$Y0plot %*% gmj.synth$solution.w 
+
+par(mar = c(5, 5, .5, .5))
+plot(1:5, gmj.dp$Y1plot, type = "n", ylim = c(0, 4.5), lwd = 2, xlab = "", ylab = "", axes = FALSE)
+box(); grid()
+abline(v = 4, lwd = 1)
+lines(1:5, gmj.dp$Y1plot, lwd = 2)
+lines(1:5, gmj.pred, lwd = 2, lty = 2)
+axis(1, at = 1:5, labels = seq(2002, 2010, 2), cex.axis = 1.25)
+axis(2, at = seq(0, 4.5, .5), cex.axis = 1.25, las = 2)
+title(xlab = "Year", cex.lab = 1.5, line = 3)
+title(ylab = "Extremity in Committee Vote Ideal Points", cex.lab = 1, line = 3)
+legend("topleft", inset = .025, bty = "n", c("Gordon M. Johnson", "Synthetic Gordon M. Johnson"), lwd = 2, col = "black", lty = c(1, 2, -1), cex = 1.25)
+text(2.25, .1, "First year after public financing", cex = 1.25)
+arrows(3.3, .1, 3.95, .1, length = .1)
+rug(assemb.comm$extremity, side = 2, ticksize = .025)
+text(1.75, 1.4, bquote(paste("MSPE" == .(round(gmj.synth$loss.v, 5)))), cex = 1.25)
+
+dev.off()
+
+```
+
+Assembly Member 4
+```{r}
+
+# Loading Data Three
+
+sdt.dp <- dataprep(assemb.comm, 
+  predictors = predictors,
+  predictors.op = "mean",
+  time.predictors.prior = 1:2,
+  dependent = "extremity",
+  unit.variable = "idnum",
+  unit.names.variable = "Name",
+  time.variable = "timenum",
+  treatment.identifier = 141,
+  controls.identifier = controls,  
+  time.optimize.ssr = 1:2,
+  time.plot = 1:5)
+
+# Generate synthetic Samuel D. Thompson #
+sdt.synth <- synth(sdt.dp, method = "BFGS")
+sdt.diag <- synth.tab(dataprep.res = sdt.dp, synth.res = sdt.synth)
+
+# Plot SDT and S-SDT #
+sdt.pred <- sdt.dp$Y0plot %*% sdt.synth$solution.w 
+
+par(mar = c(5, 5, .5, .5))
+plot(1:5, sdt.dp$Y1plot, type = "n", ylim = c(0, 4.5), lwd = 2, xlab = "", ylab = "", axes = FALSE)
+box(); grid()
+abline(v = 3, lwd = 1)
+lines(1:5, sdt.dp$Y1plot, lwd = 2)
+lines(1:5, sdt.pred, lwd = 2, lty = 2)
+axis(1, at = 1:5, labels = seq(2002, 2010, 2), cex.axis = 1.25)
+axis(2, at = seq(0, 4.5, .5), cex.axis = 1.25, las = 2)
+title(xlab = "Year", cex.lab = 1.5, line = 3)
+title(ylab = "Extremity in Committee Vote Ideal Points", cex.lab = 1, line = 3)
+legend("topleft", inset = .025, bty = "n", c("Samuel D. Thompson", "Synthetic Samuel D.", "Thompson"), lwd = 2, col = "black", lty = c(1, 2, -1), cex = 1.25)
+text(1.75, .25, "First year after", cex = 1.25)
+text(1.75, .1, "public financing", cex = 1.25)
+arrows(2.3, .25, 2.95, .25, length = .1)
+rug(assemb.comm$extremity, side = 2, ticksize = .025)
+text(1.85, 1.55, bquote(paste("MSPE" == .(round(sdt.synth$loss.v, 5)))), cex = 1.25)
+
+dev.off()
+
+```
+
+
+
+# Be warned! This will take a longer time to run, as we are filling in the gaps
+of many synthetic case tests in order to see the differentiation of ideal points.
+```{r}
+
+# Combination of Assemblymen
+
+predictors2 <- predictors[-2] # For controls == 1 (John M. Bramnick)
+
+gaps <- matrix(nrow = length(controls), ncol = 5)
+mspe.ratios <- numeric(length(controls))
+bad.fit <- numeric(22)
+for(i in 1:22){
+if(i == 1){
+placebo.dp <- dataprep(assemb.comm, 
+  predictors = predictors2,
+  predictors.op = "mean",
+  time.predictors.prior = 1:2,
+  dependent = "extremity",
+  unit.variable = "idnum",
+  unit.names.variable = "Name",
+  time.variable = "timenum",
+  treatment.identifier = controls[i],
+  controls.identifier = controls[-i],  
+  time.optimize.ssr = 1:2,
+  time.plot = 1:5)
+} else
+placebo.dp <- dataprep(assemb.comm, 
+  predictors = predictors,
+  predictors.op = "mean",
+  time.predictors.prior = 1:2,
+  dependent = "extremity",
+  unit.variable = "idnum",
+  unit.names.variable = "Name",
+  time.variable = "timenum",
+  treatment.identifier = controls[i],
+  controls.identifier = controls[-i],  
+  time.optimize.ssr = 1:2,
+  time.plot = 1:5)
+  
+placebo.synth <- synth(placebo.dp, method = "BFGS")
+placebo.pred <- placebo.dp$Y0plot %*% placebo.synth$solution.w
+gaps[i, ] <- placebo.dp$Y1plot - placebo.pred 
+mspe.ratios[i] <- mean((placebo.dp$Y1plot[3:5] - placebo.pred[3:5])^2)/mean((placebo.dp$Y1plot[1:2] - placebo.pred[1:2])^2)
+bad.fit[i] <- as.numeric(ifelse(placebo.synth$loss.v > sdt.synth$loss.v*5, 1, 0))
+print(i)
+}
+
+# Treated legislator gaps #
+lrg.gaps <- lrg.dp$Y1plot - (lrg.dp$Y0plot %*% lrg.synth$solution.w) 
+ldg.gaps <- ldg.dp$Y1plot - (ldg.dp$Y0plot %*% ldg.synth$solution.w) 
+gmj.gaps <- gmj.dp$Y1plot - (gmj.dp$Y0plot %*% gmj.synth$solution.w) 
+sdt.gaps <- sdt.dp$Y1plot - (sdt.dp$Y0plot %*% sdt.synth$solution.w) 
+
+# Treated legislator MSPE ratios #
+lrg.ratio <- mean((lrg.dp$Y1plot[4:5] - lrg.pred[4:5])^2)/mean((lrg.dp$Y1plot[1:3] - lrg.pred[1:3])^2)
+ldg.ratio <- mean((ldg.dp$Y1plot[3:5] - ldg.pred[3:5])^2)/mean((ldg.dp$Y1plot[1:2] - ldg.pred[1:2])^2)
+gmj.ratio <- mean((gmj.dp$Y1plot[4:5] - gmj.pred[4:5])^2)/mean((gmj.dp$Y1plot[1:3] - gmj.pred[1:3])^2)
+sdt.ratio <- mean((sdt.dp$Y1plot[3:5] - sdt.pred[3:5])^2)/mean((sdt.dp$Y1plot[1:2] - sdt.pred[1:2])^2)
+
+# Treated legislator permutation p-values #
+lrg.p <- length(which(mspe.ratios >= lrg.ratio))/(length(controls) + 4)
+ldg.p <- length(which(mspe.ratios >= ldg.ratio))/(length(controls) + 4)
+gmj.p <- length(which(mspe.ratios >= gmj.ratio))/(length(controls) + 4)
+sdt.p <- length(which(mspe.ratios >= sdt.ratio))/(length(controls) + 4)
+
+par(mar = c(5, 5, .5, .5))
+plot(1:5, ldg.gaps, type = "n", ylim = c(-1.5, 1.5), lwd = 2, xlab = "", ylab = "", axes = FALSE) 
+box(); grid()
+for(i in 1:22){
+if(bad.fit[i] == 0){
+lines(1:5, gaps[i, ], type = "l", col = "gray80", lwd = 2)
+} else cat("bad fit", "\n")
+} 
+abline(h = 0, lwd = 1)
+abline(v = 3, lwd = 1)
+lines(1:5, ldg.gaps, lwd = 2, lty = 1)
+lines(1:5, sdt.gaps, lwd = 2, lty = 2)
+lines(1:5, lrg.gaps, lwd = 2, lty = 3)
+lines(1:5, gmj.gaps, lwd = 2, lty = 4)
+axis(1, at = 1:5, labels = seq(2002, 2010, 2), cex.axis = 1.25)
+axis(2, at = seq(-1.5, 1.5, .5), cex.axis = 1.25, las = 2)
+title(xlab = "Year", cex.lab = 1.5, line = 3)
+title(ylab = "Difference in Extremity from Synthetic Legislator", cex.lab = 1, line = 3)
+legend("topleft", inset = .025, ncol = 2, bty = "n", c("Louis D. Greenwald", "Samuel D. Thompson", "Linda R. Greenstein", "Gordon M. Johnson", "Placebo Legislators"), lwd = 2, lty = c(1, 2, 3, 4, 1), col = c(rep("black", times = 4), "gray80"), cex = 1)
+text(1.75, -1.125, "First year after", cex = 1)
+text(1.75, -1.25, "public financing", cex = 1)
+arrows(2.3, -1.125, 2.95, -1.125, length = .1)
+
+dev.off()
+
+```
+
+The above synthetic case study focuses on New Jersey Legislative Assemblymen,
+depicting that voting patterns do not change significantly whether an 
+assembly man is either publicly or privately financed. Black lines represent 
+legislators who took public financing and gray lines represent control legislators 
+who did not participate.
+
+
+
+## Lm regressions
+
+
+We also see the use of linear regression statistical modeling in state-wide use 
+of legislative financing comparison:
+
+New Jersey Legislative Assembly modeling:
+
+```{r results = "asis", warning = FALSE, message= FALSE}
+
+### Floor Votes ###
+assemb.floor <- read.dta("assemb-floor.dta")
+assemb.floor$female <- ifelse(assemb.floor$Gender == "F", 1, 0)
+assemb.floor$gop <- ifelse(assemb.floor$Party == "R", 1, 0)
+treated <- c(67, 68, 78, 89, 136)
+controls <- unique(assemb.floor$idnum[assemb.floor$PublicFinance == 0])
+controls <- controls[-which(controls %in% treated)]
+predictors <- c("variance", "Leader", "MoneyRaised", "Seniority", "Vote", "Race", "female", "gop", "Pres_DemShare_2000")
+
+assemb.floor$post.treat <- ifelse(assemb.floor$timenum > 3, 1, 0)
+assemb.floor$treated <- ifelse(assemb.floor$idnum %in% treated, 1, 0)
+
+floor.did <- lm(extremity ~ variance + Leader + MoneyRaised + Seniority + Vote + Race + female + gop + Pres_DemShare_2000 + post.treat + treated + post.treat*treated, data = assemb.floor)
+
+stargazer(floor.did)
+
+round(coef(floor.did), 3)
+round(confint(floor.did)["post.treat:treated", ], 3)
+round(range(assemb.floor$extremity), 3)
+round(confint(floor.did)["post.treat:treated", ], 3)[2]/sd(assemb.floor$extremity)
+
+### Committee Votes ###
+assemb.comm <- read.dta("assemb-comm.dta")
+assemb.comm$female <- ifelse(assemb.comm$Gender == "F", 1, 0)
+assemb.comm$gop <- ifelse(assemb.comm$Party == "R", 1, 0)
+treated <- c(71, 72, 82, 92, 141)
+controls <- unique(assemb.comm$idnum[assemb.comm$PublicFinance == 0])
+controls <- controls[-which(controls %in% treated)]
+predictors <- c("variance", "Leader", "MoneyRaised", "Seniority", "Vote", "Race", "female", "gop", "Pres_DemShare_2000")
+
+assemb.comm$post.treat <- ifelse(assemb.comm$timenum > 3, 1, 0)
+assemb.comm$treated <- ifelse(assemb.comm$idnum %in% treated, 1, 0)
+
+comm.did <- lm(extremity ~ variance + Leader + MoneyRaised + Seniority + Vote + Race + female + gop + Pres_DemShare_2000 + post.treat + treated + post.treat*treated, data = assemb.comm)
+
+stargazer(comm.did)
+
+round(coef(comm.did), 3)
+round(confint(comm.did)["post.treat:treated", ], 3)
+round(range(assemb.comm$extremity), 3)
+round(confint(comm.did)["post.treat:treated", ], 3)[2]/sd(assemb.comm$extremity)
+
+```
+
+# Public Financing and the Electoral Connection Between Private Donors and Legislators 
+
+The linear regressions show the importance of polarization and how each legislator
+votes. We see here that there is not much of a difference between a legislator
+that was funded publicly and privately. Voting remains the same, and coefficient
+estimates in change do not prove to be statistically significant.
+
+```{r results = "asis", warning = FALSE, message= FALSE}
+
+# Note! Formatting of the stargazer tables caused tabled to break even more than
+# they already appear to be broken. I assume it is because the tables use such
+# a wide array of predictors that they end up being longer than the page? But
+# Le said this was okay!
+
+stmed <- read.dta("state-diff-medians.dta")
+clp.states <- c("AZ", "CA", "CO", "CT", "DE", "FL", "KS", "KY", "ME", "MD", "NE", "NV", "NH", "NJ", "NM", "NY", "NC", "OK", "OR", "PA", "RI", "SD", "UT", "WV", "WY")
+west <- c("WA", "OR", "CA", "ID", "NV", "AZ", "UT", "WY", "MT", "CO", "NM")
+mwest <- c("ND", "SD", "NE", "KS", "OK", "MO", "IA", "MN", "WI", "IL", "IN", "MI", "OH")
+south <- c("TX", "LA", "AR", "TN", "KY", "AL", "GA", "FL", "SC", "NC", "VA", "WV")
+
+stmed$clp <- ifelse(stmed$state %in% clp.states, 1, 0) 
+stmed$west <- ifelse(stmed$state %in% west, 1, 0) 
+stmed$mwest <- ifelse(stmed$state %in% mwest, 1, 0) 
+stmed$south <- ifelse(stmed$state %in% south, 1, 0) 
+stmed <- stmed[ , c("state", "year", "alpha", "pm", "avgdist", "ideology", "ideoex", "dividedgov", "gopshare", "deficit", "squire_score", "income", "unemployment", "population", "populationdensity", "grants", "gsp", "termlimits_house", "termlimits_senate", "demcontrol", "clp", "govideo2", "west", "mwest", "south")]
+
+## Impute missing difference in party median and average distance values ##
+pm.mi <- lm(pm ~ ideology + ideoex + dividedgov + gopshare + deficit + squire_score + income + unemployment + population + populationdensity + grants + gsp + termlimits_house + termlimits_senate + demcontrol + clp + govideo2 + west + mwest + south, data = stmed)
+
+stargazer(pm.mi)
+
+ad.mi <- lm(avgdist ~ ideology + ideoex + dividedgov + gopshare + deficit + squire_score + income + unemployment + population + populationdensity + grants + gsp + termlimits_house + termlimits_senate + demcontrol + clp + govideo2 + west + mwest + south, data = stmed)
+
+stargazer(ad.mi)
+
+dm <- stmed[ , -c(1:5)]
+stmed$pm2 <- as.matrix(cbind(1, dm)) %*% coef(pm.mi)
+stmed$pm3 <- ifelse(is.na(stmed$pm) == TRUE, stmed$pm2, stmed$pm)
+
+stmed$ad2 <- as.matrix(cbind(1, dm)) %*% coef(ad.mi)
+stmed$ad3 <- ifelse(is.na(stmed$avgdist) == TRUE, stmed$ad2, stmed$avgdist)
+
+stmed$post.treat <- ifelse(stmed$year > 2000, 1, 0)
+stmed$treated <- ifelse(stmed$alpha %in% c(3, 19), 1, 0)
+
+st.did <- lm(pm3 ~ ideology + ideoex + dividedgov + gopshare + deficit + squire_score + income + unemployment + population + populationdensity + grants + gsp + termlimits_house + termlimits_senate + demcontrol + clp + govideo2 + west + mwest + south + post.treat + treated + post.treat*treated, data = stmed)
+
+stargazer(st.did)
+
+round(coef(st.did), 3)
+round(confint(st.did)["post.treat:treated", ], 3)
+round(range(stmed$pm3), 3)
+round(confint(st.did)["post.treat:treated", ], 3)[2]/sd(stmed$pm3)
+
+```
+
+
+
+## Findings: 
+
+Both the synthetic case studies and the linear regression models above provide 
+evidence that public financing has a very insignificant effect on legislative 
+voting behavior. Evidence above actually shows that legislators basically vote 
+the same whether they are publicly or privately funding, suggesting that 
+campaign finance does not heavily affect legislative polarization. Therefore, 
+the authors discover that although campaign finance remains a volatile expression
+of political freedom and expression, it does not constitute as a significant 
+influence in the polarization of individual legislators or legislative parties. 
+Voting is not significantly changed by private donations, most likely due to the 
+assumption that a return is not expected during the time of a donation, and instead,
+private donors already focus on representing the legislators they already know
+they will agree with, rather than attempt to influence ones they do not.
+
+
+
+## Project Expansion:
+
+
+There is many ways this project could be expanded. First, it was acknowledged
+that limitations in data collection exist, as the data set is extremely narrow.
+Further data collection and a differences and differences approach using states
+with publicly funded legislative offices could provide more concrete evidence 
+to the findings of Harden and Kirkland (2016). There is much left to be explored 
+and extended content-wise within this study as well. Yes, it is determined that 
+public financing has no effect on voting behavior, but there could be many other
+notable effects. It could influence other parts of the legislative-decision
+making process, such as bill authoring lobbying, that were not focused upon in
+this study. A written extension of this paper could be expanded in such manner.
+
+
+As for an expansion on this particular study, one can go beyond a linear regression
+model and run other types of models to see other effects of public financing and
+voting. Below, I take models previously done above in the study, specifically 
+the ones focusing on New Jersey floor roll calls, and run a quasi-poisson model
+to look for over-dispersion. I then run Chi Square tests to test for such 
+over-dispersion (code in .Rmd file).
+
+
+```{r}
+
+# First model plugged into quasi-poisson:
+
+quasi.floor.did <- glm(extremity ~ variance + Leader + MoneyRaised + Seniority + 
+                       Vote + Race + female + gop + Pres_DemShare_2000 + 
+                       post.treat + treated + post.treat*treated, 
+                       family = quasipoisson, data = assemb.floor)
+
+summary(quasi.floor.did)
+
+stargazer(quasi.floor.did)
+
+# Over-dispersion
+
+prediction <- predict(quasi.floor.did, type = "response")
+
+predictionratio <- (assemb.floor$extremity - prediction)/sqrt(prediction)
+
+sum(predictionratio^2)/(length(assemb.floor$extremity) - 13)
+
+
+# Chi Square Tests
+
+1 - pchisq(summary(quasi.floor.did)$deviance, summary(quasi.floor.did)$df.residual)
+
+pchisq(47.86 - 13.522, 263 - 251, lower = FALSE)
+
+```
+
+Due to our low values, we see that the model is still a good fit for the data,
+even though over-dispersion does exist slightly. 
+
+
+## Conclusion:
+
+In this project, I walked through the study and analysis done in the piece
+Harden and Kirkland (2016): "Do Campaign Donors Influence Polarization? Evidence 
+from Public Financing in the American States," which looked at the effects of
+public financing on legislative polarization. I walked through the synthetic
+case study used to determine this answer, as well as the linear regression
+models that sought to discover a connection between voting patterns in the
+Legislative and public financing. I replicated the models accurately showcasing
+the viewer of this project the analysis conducted. I also put the statistic
+results of the linear regression models into stargazer table, allowing them to be
+understood and interpreted easier for the viewer. Contrary to popular general 
+belief, the authors provide evidence that campaign funding has minimal influence on 
+polarization. After replication of the figures and tables, I ultimately agree with
+these outcomes, as I was able to reproduce the same results. 
+
+Finally, I expanded upon this paper qualitatively, discussing further steps one 
+could take in data collection and expansion in studying the effects of campaign 
+finance on the decision-making structure of legislatures in the United States.
+Quantitatively, I also included a quasi-poisson model in order to account for
+over-dispersion in the data, and conducted a Chi-Square test on this. I was able
+to determine that the data does fit the model properly, an important note of this
+study. 
+
+I would like to thank Jeffrey Harden and Justin Kirkland for making their data
+readily available for public use, as this allows students and researchers to 
+properly replicate their work and fully understand their findings. I would 
+also like to thank Professor Jeff Gill and Le Bao for their work this semester,
+as this course has become fundamental to my understanding of statistical modeling,
+and an essential component of my future in data science. 
+
+
+## Citations:
+
+Gilens, Martin. Affluence and Influence: Economic Inequality and Political Power 
+in America. PRINCETON; OXFORD: Princeton University Press, 2012. 
+doi:10.2307/j.ctt7s1jn.
+
+Hamm, Keith E, and Hogan, Robert E. "Campaign Finance Laws and Decisions in 
+State Legislative Candidacy Elections." Political Research Quarterly 61, 
+no. 3 (2008): 458-67.
+
+Harden, Jeffrey J., and Justin H. Kirkland. "Do Campaign Donors Influence 
+Polarization? Evidence from Public Financing in the American States." 
+Legislative Studies Quarterly 41, no. 1 (2016): 119-52. doi:10.1111/lsq.12108.
+
+Schlozman, Kay Lehman, Verba, Sidney, and Brady, Henry E. The Unheavenly Chorus. 
+Princeton: Princeton University Press, 2012.
+
+Thomas Stratmann, and Francisco J. Aparicio-Castillo. "Competition Policy for 
+Elections: Do Campaign Contribution Limits Matter?" 
+Public Choice 127, no. 1/2 (2006): 177-206.
+
+
+Link to my Github with all of the Rmd code and associated files:
+**https://github.com/daililo/ReplicationProject.git**

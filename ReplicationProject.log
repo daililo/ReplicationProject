@@ -1,0 +1,973 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.4.7)  9 MAY 2021 11:09
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**ReplicationProject.tex
+(./ReplicationProject.tex
+LaTeX2e <2020-02-02> patch level 5
+L3 programming layer <2020-03-06> (/usr/local/texlive/2020/texmf-dist/tex/latex
+/base/article.cls
+Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/local/texlive/2020/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+)
+\c@part=\count167
+\c@section=\count168
+\c@subsection=\count169
+\c@subsubsection=\count170
+\c@paragraph=\count171
+\c@subparagraph=\count172
+\c@figure=\count173
+\c@table=\count174
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen134
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2020/01/20 v2.17e AMS math features
+\@mathmargin=\skip49
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks15
+\ex@=\dimen135
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen136
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count175
+LaTeX Info: Redefining \frac on input line 227.
+\uproot@=\count176
+\leftroot@=\count177
+LaTeX Info: Redefining \overline on input line 389.
+\classnum@=\count178
+\DOTSCASE@=\count179
+LaTeX Info: Redefining \ldots on input line 486.
+LaTeX Info: Redefining \dots on input line 489.
+LaTeX Info: Redefining \cdots on input line 610.
+\Mathstrutbox@=\box45
+\strutbox@=\box46
+\big@size=\dimen137
+LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+\macc@depth=\count180
+\c@MaxMatrixCols=\count181
+\dotsspace@=\muskip16
+\c@parentequation=\count182
+\dspbrk@lvl=\count183
+\tag@help=\toks16
+\row@=\count184
+\column@=\count185
+\maxfields@=\count186
+\andhelp@=\toks17
+\eqnshift@=\dimen138
+\alignsep@=\dimen139
+\tagshift@=\dimen140
+\tagwidth@=\dimen141
+\totwidth@=\dimen142
+\lineht@=\dimen143
+\@envbody=\toks18
+\multlinegap=\skip50
+\multlinetaggap=\skip51
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2859.
+LaTeX Info: Redefining \] on input line 2860.
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/lmodern.sty
+Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/lmm/m/it on input line 23.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/lmsy/m/n on input line 24.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 25.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 26.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/lmm/b/it on input line 27.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/lmsy/b/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/lmex/m/n on input line 29.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 31.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 32.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/lmr/m/it on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/lmr/bx/n on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/lmss/bx/n on input line 36.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
+) (/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+)) (/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2020/02/11 v2.0o Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
+2.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/t1lmr.fd
+File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks22
+)
+\MT@toks=\toks23
+\MT@count=\count187
+LaTeX Info: Redefining \textls on input line 790.
+\MT@outer@kern=\dimen144
+LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
+\MT@listname@count=\count188
+(/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 914.
+LaTeX Info: Redefining \lslig on input line 914.
+\MT@outer@space=\skip52
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2020-01-22 v2.0d non-zero parskip adjustments
+(/usr/local/texlive/2020/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2019/11/29 v3.13 Key value format for package options (HO)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2019/12/15 v1.24 LaTeX kernel commands for general use (HO)
+) (/usr/local/texlive/2020/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count189
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/xurl/xurl.sty
+Package: xurl 2020/01/24 v 0.09 modify URL breaks
+(/usr/local/texlive/2020/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
+(/usr/local/texlive/2020/texmf-dist/tex/latex/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2020/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/local/texlive/2020/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/auxhook/auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen145
+\Hy@linkcounter=\count190
+\Hy@pagecounter=\count191
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2020/01/14 v7.00d Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/local/texlive/2020/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/usr/local/texlive/2020/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count192
+Package hyperref Info: Option `unicode' set `true' on input line 4421.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2020/01/14 v7.00d Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4547.
+Package hyperref Info: Link nesting OFF on input line 4552.
+Package hyperref Info: Hyper index ON on input line 4555.
+Package hyperref Info: Plain pages OFF on input line 4562.
+Package hyperref Info: Backreferencing OFF on input line 4567.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4800.
+\c@Hy@tempcnt=\count193
+LaTeX Info: Redefining \url on input line 5159.
+\XeTeXLinkMargin=\dimen146
+(/usr/local/texlive/2020/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count194
+\Field@Width=\dimen147
+\Fld@charsize=\dimen148
+Package hyperref Info: Hyper figures OFF on input line 6430.
+Package hyperref Info: Link nesting OFF on input line 6435.
+Package hyperref Info: Hyper index ON on input line 6438.
+Package hyperref Info: backreferencing OFF on input line 6445.
+Package hyperref Info: Link coloring OFF on input line 6450.
+Package hyperref Info: Link coloring with OCG OFF on input line 6455.
+Package hyperref Info: PDF/A mode OFF on input line 6460.
+LaTeX Info: Redefining \ref on input line 6500.
+LaTeX Info: Redefining \pageref on input line 6504.
+(/usr/local/texlive/2020/texmf-dist/tex/generic/atbegshi/atbegshi.sty
+Package: atbegshi 2019/12/05 v1.19 At begin shipout hook (HO)
+)
+\Hy@abspage=\count195
+\c@Item=\count196
+\c@Hfootnote=\count197
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2020/01/14 v7.00d Hyperref driver for pdfTeX
+(/usr/local/texlive/2020/texmf-dist/tex/latex/atveryend/atveryend.sty
+Package: atveryend 2019-12-11 v1.11 Hooks at the very end of document (HO)
+)
+\Fld@listcount=\count198
+\c@bookmark@seq@number=\count199
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+86.
+)
+\Hy@SectionHShift=\skip53
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2019/12/03 v1.28 bookmark driver for pdfTeX (HO)
+\BKM@id=\count266
+)) (/usr/local/texlive/2020/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/usr/local/texlive/2020/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count267
+\Gm@cntv=\count268
+\c@Gm@tempcnt=\count269
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks24
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2020/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+)
+\Gin@req@height=\dimen157
+\Gin@req@width=\dimen158
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+File: l3backend-pdfmode.def 2020-03-12 L3 backend support: PDF mode
+\l__kernel_color_stack_int=\count270
+\l__pdf_internal_box=\box47
+) (./ReplicationProject.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+)
+\openout1 = `ReplicationProject.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
+LaTeX Font Info:    ... okay on input line 70.
+LaTeX Info: Redefining \microtypecontext on input line 70.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using protrusion set `basicmath'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+LaTeX Info: Redefining \showhyphens on input line 70.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+) (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count271
+\scratchdimen=\dimen159
+\scratchbox=\box48
+\nofMPsegments=\count272
+\nofMParguments=\count273
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count274
+\MPscratchDim=\dimen160
+\MPnumerator=\count275
+\makeMPintoPDFobject=\count276
+\everyMPtoPDFconversion=\toks26
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box49
+Package hyperref Info: Link coloring OFF on input line 70.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+(/usr/local/texlive/2020/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count277
+)
+LaTeX Info: Redefining \ref on input line 70.
+LaTeX Info: Redefining \pageref on input line 70.
+LaTeX Info: Redefining \nameref on input line 70.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 7
+2.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 7
+2.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
+72.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
+72.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 72.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 72.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 72.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 72.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 72.
+
+(/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2020/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 94.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 94.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 94.
+[1
+
+{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+54.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+11.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [2]
+Overfull \hbox (34.24352pt too wide) in paragraph at lines 231--231
+[]\T1/lmtt/m/n/10 ##  0.01892269 0.101298 0.2698634 0.284865 0.1247639 0.045760
+42 0.004305449 0.1086935 0.04152774[] 
+ []
+
+
+Overfull \hbox (622.2418pt too wide) in paragraph at lines 231--231
+[]\T1/lmtt/m/n/10 ##  6.33e-08 0.7433039 2.13e-08 3.05e-08 1.882e-07 0.07221879
+ 9.9e-09 6.21e-08 1.17e-08 0.08551863 4.06e-08 3.23e-08 1.95e-08 2.3e-09 9.9e-0
+9 1.29e-08 6.85e-08 3.24e-08 0.03034664 4.95e-08 0.06861135 1.91e-08[] 
+ []
+
+<ReplicationProject_files/figure-latex/unnamed-chunk-1-1.pdf, id=32, 452.69125p
+t x 303.1325pt>
+File: ReplicationProject_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file 
+(type pdf)
+<use ReplicationProject_files/figure-latex/unnamed-chunk-1-1.pdf>
+Package pdftex.def Info: ReplicationProject_files/figure-latex/unnamed-chunk-1-
+1.pdf  used on input line 233.
+(pdftex.def)             Requested size: 452.69014pt x 303.13176pt.
+[3 <./ReplicationProject_files/figure-latex/unnamed-chunk-1-1.pdf>]
+Overfull \hbox (60.49344pt too wide) in paragraph at lines 262--262
+[]\T1/lmtt/m/n/10 ##  0.2777015 0.04552174 0.0005172896 0.1337928 0.08666654 0.
+2331483 0.01634186 0.007974914 0.1983351[] 
+ []
+
+
+Overfull \hbox (826.99121pt too wide) in paragraph at lines 262--262
+[]\T1/lmtt/m/n/10 ##  5.5583e-06 0.03630462 2.9325e-06 7.3255e-06 0.0006583147 
+0.4329731 4.2104e-06 2.4747e-06 3.8533e-06 0.00301082 8.39843e-05 0.005573235 1
+.02135e-05 9.365e-07 3.9848e-06 6.5908e-06 0.0001126875 2.31e-07 0.08447699 2.8
+0867e-05 0.3098776 0.1268522[] 
+ []
+
+<ReplicationProject_files/figure-latex/unnamed-chunk-2-1.pdf, id=45, 452.69125p
+t x 303.1325pt>
+File: ReplicationProject_files/figure-latex/unnamed-chunk-2-1.pdf Graphic file 
+(type pdf)
+<use ReplicationProject_files/figure-latex/unnamed-chunk-2-1.pdf>
+Package pdftex.def Info: ReplicationProject_files/figure-latex/unnamed-chunk-2-
+1.pdf  used on input line 264.
+(pdftex.def)             Requested size: 452.69014pt x 303.13176pt.
+
+Overfull \hbox (70.99341pt too wide) in paragraph at lines 293--293
+[]\T1/lmtt/m/n/10 ##  0.2522593 0.01366109 0.001134567 0.01203919 0.002549267 0
+.00235333 0.004817062 0.7008955 0.01029073[] 
+ []
+
+[4 <./ReplicationProject_files/figure-latex/unnamed-chunk-2-1.pdf>]
+Overfull \hbox (847.99115pt too wide) in paragraph at lines 293--293
+[]\T1/lmtt/m/n/10 ##  0.0002110114 1.05e-08 0.0001821343 1.808e-07 0.009476939 
+5.7081e-06 0.001988793 4.60134e-05 0.1689275 0.3180388 3.3234e-06 0.0001204475 
+0.2994811 0.1766526 1.9196e-06 0.0005405364 1.01878e-05 0.00250655 5.90235e-05 
+0.02165073 2.705e-07 9.61092e-05[] 
+ []
+
+<ReplicationProject_files/figure-latex/unnamed-chunk-3-1.pdf, id=58, 452.69125p
+t x 303.1325pt>
+File: ReplicationProject_files/figure-latex/unnamed-chunk-3-1.pdf Graphic file 
+(type pdf)
+<use ReplicationProject_files/figure-latex/unnamed-chunk-3-1.pdf>
+Package pdftex.def Info: ReplicationProject_files/figure-latex/unnamed-chunk-3-
+1.pdf  used on input line 295.
+(pdftex.def)             Requested size: 452.69014pt x 303.13176pt.
+
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 324--324
+[]\T1/lmtt/m/n/10 ##  1.51296e-05 0.2551147 0.006758776 3.51084e-05 0.6034115 0
+.03936089 0.005552987 0.08869587 0.001055[] 
+ []
+
+
+Overfull \hbox (700.99158pt too wide) in paragraph at lines 324--324
+[]\T1/lmtt/m/n/10 ##  0.01706103 3.27694e-05 5.663e-07 3.136e-07 1.0129e-06 3.7
+03e-07 5.71e-08 4.51e-07 3.347e-07 3.4694e-06 2.078e-07 2.9656e-06 2.727e-07 6.
+5e-09 8.95e-08 0.2976436 0.6852465 3.7e-07 4.7796e-06 3.106e-07 1.889e-07 3.578
+e-07[] 
+ []
+
+<ReplicationProject_files/figure-latex/unnamed-chunk-4-1.pdf, id=59, 452.69125p
+t x 303.1325pt>
+File: ReplicationProject_files/figure-latex/unnamed-chunk-4-1.pdf Graphic file 
+(type pdf)
+<use ReplicationProject_files/figure-latex/unnamed-chunk-4-1.pdf>
+Package pdftex.def Info: ReplicationProject_files/figure-latex/unnamed-chunk-4-
+1.pdf  used on input line 326.
+(pdftex.def)             Requested size: 452.69014pt x 303.13176pt.
+[5 <./ReplicationProject_files/figure-latex/unnamed-chunk-3-1.pdf>]
+Overfull \hbox (7.99359pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.5510219 0.01834574 0.01434553 0.03234824 0.0117307 0.00
+05569625 0.3716075 4.34153e-05[] 
+ []
+
+
+Overfull \hbox (790.24132pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  1.36448e-05 0.6507814 1.20105e-05 1.29268e-05 1.5016e-05 
+0.06405937 1.94242e-05 1.2569e-05 1.32402e-05 8.8619e-06 1.2096e-05 9.6367e-06 
+5.9218e-06 6.6303e-06 1.99729e-05 1.5725e-05 0.2849402 1.30259e-05 1.0283e-05 7
+.8739e-06 1.02245e-05[] 
+ []
+
+[6 <./ReplicationProject_files/figure-latex/unnamed-chunk-4-1.pdf>]
+Overfull \hbox (34.24352pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.2909663 0.07605336 0.02329374 0.143739 0.04706195 0.205
+3729 0.07604328 0.02678445 0.110685[] 
+ []
+
+
+Overfull \hbox (742.99146pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  2.17273e-05 2.11651e-05 6.938e-07 3.2006e-06 1.6784e-06 0
+.0001007925 5.46892e-05 0.2930801 0.03950022 3.3862e-06 0.1890554 7.74e-08 6.18
+78e-06 2.6109e-06 0.00016123 0.4763485 0.001603012 1.8548e-05 3.3344e-06 -5e-10
+ 1.33286e-05[] 
+ []
+
+
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.4978867 1.4296e-06 0.08803103 0.0336415 0.0004971569 0.
+02090348 0.1474438 0.2009183 0.01067657[] 
+ []
+
+
+Overfull \hbox (737.74147pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.6369846 5.803e-07 5.5948e-06 6.0199e-06 0.0007538182 1.
+7028e-06 6.311e-06 8.779e-07 2.13739e-05 2.04128e-05 0 1.0226e-06 7.93713e-05 5
+.09086e-05 5.36757e-05 2.4755e-05 0.0003620034 0.0005520271 8.9402e-06 1.772e-0
+6 0.3610642[] 
+ []
+
+[7]
+Overfull \hbox (39.4935pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.09153037 0.1734443 0.207343 0.142073 0.001729284 0.1381
+748 0.2345595 0.008884218 0.00226154[] 
+ []
+
+
+Overfull \hbox (737.74147pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.0002076866 6.49e-08 4.894e-07 2.34146e-05 0.05396786 0.
+08322144 0.2282119 1.073e-07 7.7841e-06 8.817e-07 2.94e-07 0.2304405 0.00040120
+97 4.44052e-05 9.255e-07 0.4029236 0.0004575571 6.0972e-06 8.31417e-05 3.295e-0
+7 2.765e-07[] 
+ []
+
+
+Overfull \hbox (39.4935pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.1907256 0.1857908 0.3352251 0.031183 0.006167716 0.0634
+0206 0.001249069 0.1717064 0.0145503[] 
+ []
+
+
+Overfull \hbox (679.99164pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  2.003e-07 1.52e-08 1.75e-07 6.4705e-06 0.05390605 2.67e-0
+7 1.728e-07 7.88e-08 0.4838374 6.49449e-05 0.03421708 0.0005027951 0.0001086439
+ 9.2479e-06 3.5e-09 0.0005451522 8.6e-08 1.31e-08 0.4268004 4.723e-07 3.769e-07
+[] 
+ []
+
+
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.1965533 0.01502873 0.03060281 0.0004276863 0.02364993 0
+.017909 0.01160769 0.6808913 0.02332958[] 
+ []
+
+
+Overfull \hbox (742.99146pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.00766741 2.634e-07 2.35092e-05 0.2435525 4.0552e-06 2.9
+7974e-05 0.4072693 6.763e-07 1.3061e-06 0.01391529 5.2129e-06 7.262e-07 1.34003
+e-05 5.67919e-05 2.24835e-05 0.2125235 0.1148887 8.6755e-06 8.6034e-06 5.919e-0
+7 7.1896e-06[] 
+ []
+
+[8]
+Overfull \hbox (65.74342pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.2023376 0.1732392 0.001914702 0.3296466 0.01814828 0.07
+409569 0.1985921 0.001575054 0.0004508362[] 
+ []
+
+
+Overfull \hbox (737.74147pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.001961511 2.321e-06 1.1755e-06 1.92429e-05 1.5682e-06 1
+.0239e-06 0.2202331 0.1894159 1.5971e-06 9.44e-07 1.2561e-06 8.2469e-06 4.8821e
+-06 1.4391e-06 0.5835939 2.8655e-06 0.004741413 1.2589e-06 4.6486e-06 1.0239e-0
+6 7.298e-07[] 
+ []
+
+
+Overfull \hbox (23.74355pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.1385298 0.1329919 0.05036419 0.1111452 0.1261813 0.0821
+5348 0.229757 0.109836 0.01904126[] 
+ []
+
+
+Overfull \hbox (753.49142pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.01726671 8.7e-09 2.12652e-05 1.08364e-05 1.03046e-05 0.
+2785713 0.0003330435 0.5257222 2.28888e-05 2.4242e-06 3.2472e-06 1.8839e-06 1.2
+002e-06 9.601e-07 2.32885e-05 0.0911045 0.08689569 1.599e-06 2.1853e-06 1.7994e
+-06 2.6446e-06[] 
+ []
+
+[9]
+Overfull \hbox (18.49356pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.07323649 0.1114562 0.1172392 0.1073018 0.1026726 0.1485
+61 0.1095927 0.1205463 0.1093938[] 
+ []
+
+
+Overfull \hbox (669.49167pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  1.5806e-06 0.2273737 5.351e-07 1.989e-07 3.811e-07 1.012e
+-07 5.93e-07 0.3395382 2.523e-07 1.28e-08 1.731e-07 0.3617507 1.44447e-05 7.368
+6e-06 2.695e-07 6.86e-08 1.77592e-05 3.079e-07 0.01069589 0.0605973 2.129e-07[]
+ 
+ []
+
+
+Overfull \hbox (60.49344pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.166854 0.03807676 0.0380823 0.000134073 0.04534505 2.01
+19e-06 0.05405763 0.6572231 0.0002251059[] 
+ []
+
+
+Overfull \hbox (879.49106pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.0001522741 0.2174824 0.0001724099 2.7824e-05 0.00016874
+3 3.7026e-06 0.000170548 0.01575378 1.23836e-05 0.0005093043 0.0002395449 1.390
+45e-05 0.0004855255 0.0004715162 0.0002002001 0.6377803 0.0006724278 0.00019993
+75 0.0003599151 0.1249007 0.0002226448[] 
+ []
+
+
+Overfull \hbox (70.99341pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.0001528205 0.003449514 4.2162e-05 0.000157784 0.2405395
+ 0.05957193 0.2736556 0.3370837 0.08534702[] 
+ []
+
+
+Overfull \hbox (874.24107pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.0004028707 6.6512e-06 0.0003382746 0.0005999743 0.00069
+50322 0.1260742 0.0003566129 6.253e-07 0.0006212089 0.0008227747 0.0003549859 0
+.2640789 8.10324e-05 0.0002710159 0.0003699734 1.42e-08 0.0005571203 0.00027090
+77 0.0003086879 0.603502 0.0002870491[] 
+ []
+
+[10]
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  8.2488e-06 0.06007701 6.51664e-05 5.6373e-06 0.1219387 0.
+05902735 0.2619711 0.4969061 7.267e-07[] 
+ []
+
+
+Overfull \hbox (905.74098pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.0003302969 0.0001663742 1.81698e-05 0.0001415544 0.0001
+462236 0.0001504833 1.82723e-05 0.0001482506 0.00013965 0.000152805 0.000131001
+3 0.000136752 7.97539e-05 9.55907e-05 0.8851997 0.0001642146 0.0001233154 0.000
+2664639 0.0001094457 0.0001273265 0.1121544[] 
+ []
+
+
+Overfull \hbox (81.49338pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.1312359 0.01281595 0.001380284 0.001752388 0.06184236 0
+.009498496 0.007257423 0.7697987 0.004418465[] 
+ []
+
+
+Overfull \hbox (679.99164pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  7.491e-07 1.43093e-05 6.541e-07 0.0004201409 6.263e-05 4.
+363e-07 1.2306e-06 1.994e-07 7.467e-07 8.91e-08 1.9507e-06 0.006181656 1e-10 4.
+935e-07 1.9779e-06 0.2414347 8.72e-08 2.3229e-06 8.256e-07 0.7518734 1.3367e-06
+[] 
+ []
+
+
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.170488 0.02832494 0.004860631 0.03867174 0.01233719 0.0
+2783241 0.004817993 0.682608 0.03005904[] 
+ []
+
+[11]
+Overfull \hbox (727.2415pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  2.57352e-05 1.1851e-05 5.922e-05 4.2484e-06 3.066e-06 6.3
+91e-07 1.98285e-05 8.484e-07 1.306e-07 5.13372e-05 2.3782e-06 2.9866e-06 0.0915
+5551 0.4737833 0.019153 5.5873e-06 0.04516124 7.8288e-05 8.6639e-06 0.369997 7.
+51271e-05[] 
+ []
+
+
+Overfull \hbox (49.99347pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.1346726 0.0004886293 0.05753277 0.1112111 0.07243989 0.
+07364331 0.4305056 0.01904904 0.100457[] 
+ []
+
+
+Overfull \hbox (800.74129pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  2.01856e-05 1.68723e-05 1.40778e-05 2.91458e-05 1.13444e-
+05 0.0003293753 1.05166e-05 3.20524e-05 4.63009e-05 8.4106e-06 0.05540915 1.030
+27e-05 2.77486e-05 0.575416 9.681e-06 2.09709e-05 4.24439e-05 0.178325 0.190209
+2 2.4697e-06 8.8001e-06[] 
+ []
+
+
+Overfull \hbox (60.49344pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.1894716 4.3559e-06 0.0004519936 0.004207918 0.2686765 0
+.04217407 0.3098503 0.1359008 0.04926242[] 
+ []
+
+
+Overfull \hbox (826.99121pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.1155271 0.002100755 0.01843586 9.86981e-05 0.000124234 
+0.0001392721 0.4929286 0.0002252235 7.1382e-05 0.01048173 6.51559e-05 0.3563257
+ 4.52397e-05 4.0121e-05 4.33132e-05 0.001135242 0.0009208525 0.00113462 6.55776
+e-05 7.78779e-05 1.35148e-05[] 
+ []
+
+[12]
+Overfull \hbox (76.2434pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.2142485 0.004691644 0.01276394 0.003543243 0.008304931 
+0.001231095 0.03428338 0.6979491 0.02298415[] 
+ []
+
+
+Overfull \hbox (590.7419pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  5.145e-07 5e-10 6.016e-07 0.0004235406 0 0.2557061 1.0484
+e-06 5.3e-09 3.4e-09 0.5201072 7.82e-08 0.009418745 0.2143342 6.328e-07 1.739e-
+07 3.1346e-06 5.91e-08 2.9348e-06 3.26e-08 1.92e-08 1.0022e-06[] 
+ []
+
+
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.2790863 0.008186824 0.2542262 0.1201741 0.01641387 0.11
+39538 0.009017793 0.007333656 0.1916075[] 
+ []
+
+
+Overfull \hbox (532.99207pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.2181975 8.98e-08 0.1581311 2.01e-08 4.31e-08 1.78e-08 1
+.57e-07 0.6236697 1e-10 9.96e-07 1.83e-08 2.66e-08 8.4e-09 3.44e-08 1.92e-08 7.
+75e-08 4.54e-08 4.11e-08 6.85e-08 2.71e-08 4.39e-08[] 
+ []
+
+
+Overfull \hbox (28.99353pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.1085492 0.1128878 0.1404557 0.1406928 0.1058068 0.12437
+6 0.1845274 0.07497442 0.007729835[] 
+ []
+
+
+Overfull \hbox (511.99213pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  5.55e-08 1.07e-08 3.86e-08 8.7e-09 4.21e-08 3.44e-08 2.16
+e-08 7.6e-09 2.9e-09 7.67e-08 1.11e-08 0.408703 5.1e-09 3e-10 0.5912958 4.38e-0
+8 3.67e-08 1.351e-07 6.319e-07 4.9e-09 4.42e-08[] 
+ []
+
+[13]
+Overfull \hbox (55.24345pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  1.2587e-06 0.02728862 0.03170358 0.05771974 0.1960737 0.0
+06925313 0.4348989 0.2331587 0.01223014[] 
+ []
+
+
+Overfull \hbox (569.74196pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  6.767e-07 5.98019e-05 2.985e-07 4.58e-08 0.04826993 1.9e-
+09 3.59e-07 6.67e-08 1.824e-07 3.5752e-06 4.2e-08 5.804e-07 5.4e-08 0 0.4071817
+ 3.38e-07 7.1e-09 0.5414384 0.003043491 1.232e-07 2.99e-07[] 
+ []
+
+
+Overfull \hbox (81.49338pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.1989304 0.01786662 0.007655385 0.00733622 0.007446477 0
+.0008580075 0.04284535 0.7154481 0.001613409[] 
+ []
+
+
+Overfull \hbox (664.24168pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  4.794e-07 0.1807966 9.276e-07 4.006e-07 7.308e-07 6.546e-
+07 7.896e-07 5.109e-07 5.848e-07 1.2738e-06 0.1322605 0.01928399 0.6023277 0.06
+531745 2.2e-09 1.1959e-06 5.46e-08 3.807e-07 2.7664e-06 5.917e-07 2.4862e-06[] 
+
+ []
+
+[14]
+Overfull \hbox (91.99335pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  0.0004763812 0.0003974682 9.85404e-05 0.1595424 0.0461664
+ 0.0001350971 0.7598251 0.02340329 0.009955408[] 
+ []
+
+
+Overfull \hbox (559.24199pt too wide) in paragraph at lines 804--804
+[]\T1/lmtt/m/n/10 ##  3.31e-08 4.14e-08 5.3e-07 4.54e-08 3.79e-08 3.9e-08 3.84e
+-08 4.46e-08 4.68e-08 3.26e-08 5.0342e-06 0.762995 4.61e-08 1.99e-07 4.847e-07 
+3.46e-08 4.07e-08 8.68e-08 0.0485298 1.458e-07 0.1884683[] 
+ []
+
+<ReplicationProject_files/figure-latex/unnamed-chunk-5-1.pdf, id=120, 452.69125
+pt x 308.15125pt>
+File: ReplicationProject_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file 
+(type pdf)
+<use ReplicationProject_files/figure-latex/unnamed-chunk-5-1.pdf>
+Package pdftex.def Info: ReplicationProject_files/figure-latex/unnamed-chunk-5-
+1.pdf  used on input line 810.
+(pdftex.def)             Requested size: 452.69014pt x 308.15048pt.
+[15 <./ReplicationProject_files/figure-latex/unnamed-chunk-5-1.pdf>] [16]
+
+LaTeX Warning: Float too large for page by 250.55936pt on input line 1071.
+
+
+LaTeX Warning: Float too large for page by 250.55936pt on input line 1160.
+
+
+LaTeX Warning: Float too large for page by 358.55936pt on input line 1258.
+
+[17] [18] [19] [20] [21]
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 
+1346.
+(/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (107.7433pt too wide) in paragraph at lines 1408--1408
+[]\T1/lmtt/m/n/10 ## % Table created by stargazer v.5.2.2 by Marek Hlavac, Harv
+ard University. E-mail: hlavac at fas.harvard.edu[] 
+ []
+
+[22]
+Overfull \hbox (13.24358pt too wide) in paragraph at lines 1408--1408
+[]\T1/lmtt/m/n/10 ## \textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}
+$p$<$0.05; $^{***}$p$<$0.01} \\[] 
+ []
+
+[23]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1486.
+[24]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1486.
+(./ReplicationProject.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1486.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1486.
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 13111 strings out of 480608
+ 193994 string characters out of 5903631
+ 512515 words of memory out of 5000000
+ 28641 multiletter control sequences out of 15000+600000
+ 586569 words of font info for 108 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 41i,10n,42p,1034b,467s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
+texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2020/
+texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2020/texmf-dist
+/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvi
+ps/lm/lm-mathsy.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/l
+mbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmbx12.pfb>
+</usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2
+020/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2020/texmf-d
+ist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2020/texmf-dist/fonts/t
+ype1/public/lm/lmr7.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/
+lm/lmri10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy10.
+pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on ReplicationProject.pdf (24 pages, 273485 bytes).
+PDF statistics:
+ 291 PDF objects out of 1000 (max. 8388607)
+ 236 compressed objects within 3 object streams
+ 54 named destinations out of 1000 (max. 500000)
+ 12410 words of extra memory for PDF output out of 14400 (max. 10000000)
+
